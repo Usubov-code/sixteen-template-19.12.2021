@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@{ string controller = this.ViewContext.RouteData.Values["controller"].ToString();
+    }
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -42,26 +44,26 @@
     <header class="">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><h2>Sixteen <em>Clothing</em></h2></a>
+                <a class="navbar-brand @(controller=="Home" ? "active":"")"  asp-controller="Home" asp-action="Index"><h2>Sixteen <em>Clothing</em></h2></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" asp-controller="Home" asp-action="Index">
+                            <a class="nav-link @(controller=="Home" ? "active":"")" asp-controller="Home" asp-action="Index">
                                 Home
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Product" asp-action="Index">Our Products</a>
+                            <a class="nav-link @(controller=="Product" ? "active":"")" asp-controller="Product" asp-action="Index">Our Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="About" asp-action="Index">About Us</a>
+                            <a class="nav-link @(controller=="About"?"active":"")" asp-controller="About" asp-action="Index">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Contact" asp-action="Index">Contact Us</a>
+                            <a class="nav-link @(controller=="Contact"?"active":"")" asp-controller="Contact" asp-action="Index">Contact Us</a>
                         </li>
                     </ul>
                 </div>
