@@ -1,0 +1,49 @@
+﻿@model VmProduct
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="filters">
+            <ul>
+                <li class="active" data-filter="*">All Products</li>
+                <li data-filter=".des">Featured</li>
+                <li data-filter=".dev">Flash Deals</li>
+                <li data-filter=".gra">Last Minute</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="filters-content">
+            <div class="row grid">
+                @foreach (var item in @Model.Products)
+                {
+                    <div class="col-lg-4 col-md-4 all des">
+                        <div class="product-item">
+                            <a href="#"><img src="~/images/@item.Img" alt=""></a>
+                            <div class="down-content">
+                                <a href="#"><h4> lorem afafasfa</h4></a>
+                                <h6>@item.Price</h6>
+                                <p>@item.Content</p>
+                                <ul class="stars">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                                <a asp-controller="Shopping" asp-action="AddToCart" asp-route-id="@item.Id" asp->AddToCart</a>
+                                <span>Reviews @item.Review</span>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>S
+
